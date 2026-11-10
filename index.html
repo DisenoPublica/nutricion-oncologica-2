@@ -18,7 +18,8 @@
   <meta name="twitter:title" content="#TratamientoCompleto — Sin nutrición, falta algo">
   <meta name="twitter:description" content="La nutrición oncológica es parte fundamental del tratamiento contra el cáncer.">
   <style>
-    html, body { margin: 0; padding: 0; background: #f7f8f9; }
+    html, body { margin: 0; padding: 0; background: #F7F2EC; }
+    a { color: #4A2C8A; } a:hover { color: #FF5C2B; }
     body { max-width: 100%; }
     * { box-sizing: border-box; }
     @media (max-width: 768px) {
@@ -33,11 +34,11 @@
       [data-r="p-17"] { font-size: 14px !important; line-height: 1.55 !important; }
       [data-r="p-19"] { font-size: 15px !important; margin-bottom: 28px !important; }
       [data-r="puzzle"] { width: 108px !important; height: 108px !important; transform: scale(0.5) !important; transform-origin: top left !important; }
-      [data-r="donuts"] { gap: 30px !important; }
+      [data-r="donuts"] { flex-direction: column !important; gap: 20px !important; } [data-r="donuts"] > div:not(:nth-child(2)) { width: 100% !important; }
       [data-r="sym"] { grid-template-columns: 1fr !important; min-height: 0 !important; gap: 28px !important; }
       [data-r="petal"] { display: none !important; }
       [data-r="sym-left"] { padding-right: 0 !important; }
-      [data-r="sym-right"] { padding-left: 0 !important; gap: 22px !important; }
+      [data-r="sym-right"] { padding-left: 0 !important; gap: 20px !important; } [data-r="sym"] > div { width: 100% !important; }
       [data-r="card3"] { width: 100% !important; height: auto !important; padding: 26px 20px !important; }
       [data-r="card3-grid"] { grid-template-columns: 1fr !important; gap: 26px !important; }
       [data-r="card3-grid"] > div { border-left: none !important; padding-left: 0 !important; }
@@ -65,266 +66,207 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..700&amp;family=Archivo:wdth,wght@62..125,400..900&amp;family=Poppins:wght@400;500;600;700;800;900&amp;family=DM+Serif+Text&amp;display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="./image-slot.js"></script>
 </helmet>
-<template id="__bundler_thumbnail" data-bg-color="#8b3fe6">
+<template id="__bundler_thumbnail" data-bg-color="#FF5C2B">
   <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <rect x="60" y="30" width="80" height="70" rx="6" fill="#ffffff" opacity="0.9"></rect>
     <rect x="55" y="100" width="90" height="14" rx="3" fill="#ffffff" opacity="0.9"></rect>
     <rect x="60" y="114" width="10" height="55" fill="#ffffff" opacity="0.9"></rect>
     <rect x="130" y="114" width="10" height="55" fill="#ffffff" opacity="0.9"></rect>
-    <rect x="60" y="60" width="80" height="16" fill="#8b3fe6"></rect>
+    <rect x="60" y="60" width="80" height="16" fill="#FF5C2B"></rect>
   </svg>
 </template>
-<div style="width:100%;background:#f7f8f9;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-<div style="display:{{ tabADisplay }};">
-<section data-r="hero" ref="{{ heroRef }}" style="position:relative;width:100%;height:100vh;overflow:hidden;background:#efeeec;">
-  <div ref="{{ mountRef }}" style="position:absolute;inset:0;cursor:grab;"></div>
-
-  <div ref="{{ headlineRef }}" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;pointer-events:none;opacity:0;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(239,238,236,0.55);">
-    <div data-r="hero-h" style="font-family:'DM Serif Text',serif;font-size:120px;font-weight:400;color:#1f1b14;letter-spacing:-0.01em;text-align:center;padding:0 24px;transform:scaleX(0.88);">¿Falta algo, no?</div>
-    <div style="font-size:24px;color:#8a8378;animation:scrollBounce 1.8s ease-in-out infinite;">↓</div>
+<div style="width:100%;background:#F7F2EC;font-family:'Poppins',sans-serif;">
+<div style="font-family:'Poppins',sans-serif;background:#F7F2EC;">
+<section data-r="p2-hero" style="position:relative;min-height:100vh;background:#F7F2EC;overflow:hidden;display:flex;align-items:center;padding:80px 40px;">
+  <div style="position:relative;max-width:1100px;margin:0 auto;width:100%;">
+    <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#4A2C8A;font-weight:700;margin-bottom:28px;">¿Cuánto sabemos de nutrición oncológica?</div>
+    <h1 data-r="p2-h1" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(64px,11vw,160px);line-height:0.92;letter-spacing:-0.03em;margin:0;text-transform:uppercase;"><span style="display:block;color:#FF5C2B;">Tratamiento</span><span style="display:block;color:#4A2C8A;">completo.</span></h1>
+    <p style="max-width:380px;font-size:16px;line-height:1.5;color:#2A1B4A;margin:32px 0 0;font-weight:500;text-wrap:pretty;">La nutrición oncológica también forma parte del tratamiento oncológico integral.</p>
+    <a href="#encuesta" onClick="{{ goEncuesta }}" style="display:inline-flex;align-items:center;gap:8px;margin-top:32px;padding:12px 22px;border-radius:999px;background:#FF5C2B;color:#ffffff;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 14px 32px rgba(255,92,43,0.3);transition:transform 0.2s ease, background 0.2s ease;" style-hover="transform:translateY(-2px);background:#E94A1A;color:#ffffff;">Respondé la encuesta <span style="font-size:20px;line-height:1;">↓</span></a>
   </div>
-
-  <div style="position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;align-items:flex-end;padding:32px 40px;pointer-events:auto;">
-    <div style="pointer-events:none;font-size:14px;color:#c9c4bd;max-width:380px;line-height:1.5;text-align:center;font-weight:600;">
-      Scrollea hacia abajo
-    </div>
-  </div>
-
-  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
-    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#efeeec;z-index:20;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8378;">
-      Cargando silla…
-    </div>
-  </sc-if>
 </section>
 
-<section data-r="s2" style="padding:140px 24px;">
-  <div data-r="s2-grid" style="max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center;">
-    <div>
-      <div data-r="h-32" style="font-family:'DM Serif Text',serif;font-size:32px;font-weight:400;color:#12161a;line-height:1.25;letter-spacing:-0.01em;margin-bottom:32px;">
-        <span style="color:#8b3fe6;">¿Falta algo, no?</span>
-      </div>
-      <p style="font-size: 17px; line-height: 1.7; color: #40484f; margin: 0 0 20px; font-weight: 600" data-r="p-17">
-        La nutrición oncológica es parte fundamental del tratamiento contra el cáncer. <br>Sin nutrición, falta algo.
-      </p>
-      
+<section style="padding:120px 40px;background:#EDE6FD;">
+  <div ref="{{ p2QueRef }}" style="max-width:1100px;margin:0 auto;opacity:{{ p2Que.op }};transform:translateY({{ p2Que.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <div data-r="p2-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:60px;line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;margin-bottom:16px;">¿Qué es la nutrición oncológica?</div>
+      <p style="font-size:19px;line-height:1.6;color:#4a4060;max-width:620px;margin:0 auto;text-wrap:pretty;">Es el acompañamiento nutricional durante todo el tratamiento, adaptado a las necesidades de cada persona.</p>
     </div>
-    <div ref="{{ puzzleRef }}" style="display:flex;justify-content:center;flex:none;opacity:{{ puzzleReveal.op }};transform:translateY({{ puzzleReveal.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
-      <div style="position:relative;width:216px;height:216px;flex:none;" data-r="puzzle">
-        <div onClick="{{ onClickPiece0 }}" style="position:absolute;left:0;top:0;width:108px;height:108px;border-radius:18px 4px 4px 4px;background:#8b3fe6;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;box-shadow:{{ pieceShadow0 }};" style-hover="transform:scale(1.04);"></div>
-        <div onClick="{{ onClickPiece1 }}" style="position:absolute;left:108px;top:0;width:108px;height:108px;border-radius:4px 18px 4px 4px;background:#a668ee;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;box-shadow:{{ pieceShadow1 }};" style-hover="transform:scale(1.04);"></div>
-        <div onClick="{{ onClickPiece2 }}" style="position:absolute;left:0;top:108px;width:108px;height:108px;border-radius:4px 4px 4px 18px;background:#c9b3ea;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;box-shadow:{{ pieceShadow2 }};" style-hover="transform:scale(1.04);"></div>
-        <div onClick="{{ onClickPiece3 }}" style="position:absolute;left:108px;top:108px;width:108px;height:108px;border-radius:4px 4px 18px 4px;background:transparent;border:2px dashed #a9a3b5;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;box-shadow:{{ pieceShadow3 }};" style-hover="transform:scale(1.04);"></div>
-        <div style="position:absolute;left:101px;top:47px;width:14px;height:14px;border-radius:50%;background:#8b3fe6;pointer-events:none;"></div>
-        <div style="position:absolute;left:47px;top:101px;width:14px;height:14px;border-radius:50%;background:#8b3fe6;pointer-events:none;"></div>
-        <div style="position:absolute;left:161px;top:101px;width:14px;height:14px;border-radius:50%;background:#a668ee;pointer-events:none;"></div>
-        <div style="position:absolute;left:101px;top:161px;width:14px;height:14px;border-radius:50%;background:#c9b3ea;pointer-events:none;"></div>
-        <div onClick="{{ onClosePopup }}" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale({{ popup.scale }});opacity:{{ popup.op }};pointer-events:{{ popup.pointer }};transition:opacity 0.3s ease, transform 0.3s ease;background:#ffffff;border-radius:14px;box-shadow:0 16px 44px rgba(20,15,30,0.22);padding:22px 34px;width:400px;text-align:center;z-index:5;cursor:pointer;">
-          <div style="font-size:38px;font-weight:800;color:#8b3fe6;margin-bottom:8px;">1 de cada 4</div>
-          <div style="font-size:14px;font-weight:300;color:#40384a;line-height:1.55;">pacientes oncológicos muere por causas relacionadas con la desnutrición</div>
+    <div data-r="sym" style="display:grid;grid-template-columns:minmax(0,1fr) 260px minmax(0,1fr);align-items:center;gap:0;">
+      <div style="display:flex;flex-direction:column;gap:56px;">
+        <div style="display:flex;align-items:center;opacity:{{ queA.o }};transform:translateX({{ queA.tl }}px);transition:opacity 0.6s ease 200ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 200ms;"><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">01</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Se adapta a los cambios en el apetito, el gusto y la tolerancia.</div></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div></div>
+        <div style="display:flex;align-items:center;opacity:{{ queA.o }};transform:translateX({{ queA.tl }}px);transition:opacity 0.6s ease 350ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 350ms;"><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">02</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Ayuda a mantener el estado nutricional y la fuerza.</div></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div></div>
+      </div>
+      <div style="display:flex;justify-content:center;">
+        <div style="position:relative;width:240px;height:240px;border-radius:50%;background:#7B55E8;opacity:{{ queA.o }};transform:scale({{ queA.sc }}) rotate({{ queA.rot }}deg);transition:opacity 0.5s ease, transform 1s cubic-bezier(.3,1.4,.5,1);display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 18px #ECE5FD, 0 0 0 36px #FFE1D6;">
+          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:24px;line-height:1.15;color:#ffffff;padding:0 28px;">Nutrición<br>oncológica</div>
         </div>
       </div>
+      <div style="display:flex;flex-direction:column;gap:56px;">
+        <div style="display:flex;align-items:center;opacity:{{ queA.o }};transform:translateX({{ queA.tr }}px);transition:opacity 0.6s ease 500ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 500ms;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">03</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Puede contribuir a manejar efectos secundarios.</div></div></div>
+        <div style="display:flex;align-items:center;opacity:{{ queA.o }};transform:translateX({{ queA.tr }}px);transition:opacity 0.6s ease 650ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 650ms;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">04</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Siempre con seguimiento de un profesional de la salud.</div></div></div>
+      </div>
     </div>
-    
   </div>
 </section>
 
-<section ref="{{ donutsRef }}" style="padding:130px 24px;background:#f5f3fa;opacity:{{ rowDonuts.op }};transform:translateY({{ rowDonuts.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;overflow:hidden;">
-  <div style="display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:64px;max-width:1200px;margin-left:auto;margin-right:auto;">
+<section ref="{{ donutsRef }}" style="padding:120px 40px;background:#EDE6FD;opacity:{{ rowDonuts.op }};transform:translateY({{ rowDonuts.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;overflow:hidden;">
+  <div style="display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:64px;max-width:1100px;margin-left:auto;margin-right:auto;">
     
-    <div style="font-family:'DM Serif Text',serif;font-size:26px;font-weight:400;color:#151318;letter-spacing:-0.01em;" data-r="h-26">Pero casi nadie recibe ayuda</div>
+    <div style="font-family:'Poppins',sans-serif;font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;text-align:center;color:#2A1B4A;" data-r="h-26">Pero casi nadie recibe ayuda</div>
   </div>
-  <div style="display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;max-width:760px;margin:0 auto;" data-r="donuts">
-    <div onClick="{{ onToggleDonutLeft }}" style="text-align:center;cursor:pointer;transition:transform 0.2s ease;" style-hover="transform:scale(1.03);">
-      <div style="position:relative;width:200px;height:200px;margin:0 auto 18px;">
-        <div style="position:absolute;left:50%;top:50%;width:280px;height:280px;background:#8b3fe6;filter:blur(65px);opacity:0.3;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;"></div>
-        <svg viewBox="0 0 200 200" style="position:relative;width:200px;height:200px;">
-          <sc-for list="{{ ticksLeft }}" as="t" hint-placeholder-count="48">
-            <line x1="{{ t.x1 }}" y1="{{ t.y1 }}" x2="{{ t.x2 }}" y2="{{ t.y2 }}" stroke="{{ t.color }}" stroke-width="4" stroke-linecap="round" opacity="{{ t.op }}"></line>
-          </sc-for>
-        </svg>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:{{ donutLeftColor }};transition:color 0.3s ease;">84,4%</div>
+  <div style="display:flex;align-items:stretch;justify-content:center;gap:24px;max-width:900px;margin:0 auto;" data-r="donuts">
+    <div onClick="{{ onToggleDonutLeft }}" style="flex:1;min-width:0;background:#ffffff;border-radius:24px;padding:40px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 14px 36px rgba(74,44,138,0.08);cursor:pointer;transition:transform 0.2s ease;" style-hover="transform:translateY(-4px);">
+      <div style="position:relative;width:200px;height:200px;margin-bottom:24px;">
+        <svg viewBox="0 0 200 200" style="width:200px;height:200px;transform:rotate(-90deg);"><circle cx="100" cy="100" r="80" fill="none" stroke="#ECE5FD" stroke-width="22"></circle><circle cx="100" cy="100" r="80" fill="none" stroke="#7B55E8" stroke-width="22" stroke-dasharray="502.7" stroke-dashoffset="{{ donutOffL }}" style="transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1);"></circle></svg>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:38px;letter-spacing:-0.02em;color:#2A1B4A;">84,4%</div>
       </div>
-      <div style="font-size:15px;color:#5c5766;max-width:230px;margin:0 auto;line-height:1.4;">de las personas con cáncer presenta problemas con la alimentación durante el tratamiento.</div>
+      <div style="font-size:17px;line-height:1.45;color:#2A1B4A;max-width:280px;text-wrap:balance;">de las personas con cáncer presenta problemas con la alimentación durante el tratamiento.</div>
     </div>
-    <div style="font-size:16px;color:#8a8494;font-weight:800;flex:none;">VS</div>
-    <div onClick="{{ onToggleDonutRight }}" style="text-align:center;cursor:pointer;transition:transform 0.2s ease;" style-hover="transform:scale(1.03);">
-      <div style="position:relative;width:200px;height:200px;margin:0 auto 18px;">
-        <div style="position:absolute;left:50%;top:50%;width:280px;height:280px;background:#ec8337;filter:blur(65px);opacity:0.3;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;"></div>
-        <svg viewBox="0 0 200 200" style="position:relative;width:200px;height:200px;">
-          <sc-for list="{{ ticksRight }}" as="t" hint-placeholder-count="48">
-            <line x1="{{ t.x1 }}" y1="{{ t.y1 }}" x2="{{ t.x2 }}" y2="{{ t.y2 }}" stroke="{{ t.color }}" stroke-width="4" stroke-linecap="round" opacity="{{ t.op }}"></line>
-          </sc-for>
-        </svg>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:{{ donutRightColor }};transition:color 0.3s ease;">80,1%</div>
+    <div style="flex:none;align-self:center;width:64px;height:64px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;letter-spacing:0.06em;">VS</div>
+    <div onClick="{{ onToggleDonutRight }}" style="flex:1;min-width:0;background:#ffffff;border-radius:24px;padding:40px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 14px 36px rgba(74,44,138,0.08);cursor:pointer;transition:transform 0.2s ease;" style-hover="transform:translateY(-4px);">
+      <div style="position:relative;width:200px;height:200px;margin-bottom:24px;">
+        <svg viewBox="0 0 200 200" style="width:200px;height:200px;transform:rotate(-90deg);"><circle cx="100" cy="100" r="80" fill="none" stroke="#FFE1D6" stroke-width="22"></circle><circle cx="100" cy="100" r="80" fill="none" stroke="#FF5C2B" stroke-width="22" stroke-dasharray="502.7" stroke-dashoffset="{{ donutOffR }}" style="transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1);"></circle></svg>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:38px;letter-spacing:-0.02em;color:#2A1B4A;">80,1%</div>
       </div>
-      <div style="font-size:15px;color:#5c5766;max-width:230px;margin:0 auto;line-height:1.4;">&nbsp;de los pacientes con problemas de alimentación nunca fue derivado a un nutricionista.</div>
+      <div style="font-size:17px;line-height:1.45;color:#2A1B4A;max-width:280px;text-wrap:balance;">de los pacientes con problemas de alimentación nunca fue derivado a un nutricionista.</div>
     </div>
   </div>
-  <div style="max-width:640px;margin:56px auto 0;background:#ffffff;border-radius:14px;padding:18px 24px;font-size:14px;color:#40384a;line-height:1.5;text-align:center;box-shadow:0 8px 24px rgba(20,15,30,0.05);">Miles de personas atraviesan el tratamiento sin acompañamiento nutricional.</div>
+  <div style="max-width:640px;margin:56px auto 0;background:#ffffff;border-radius:24px;padding:22px 28px;font-size:16px;font-weight:500;color:#2A1B4A;line-height:1.5;text-align:center;box-shadow:0 14px 36px rgba(74,44,138,0.08);">Miles de personas atraviesan el tratamiento sin<br>acompañamiento nutricional.</div>
 </section>
 
-<section style="padding:130px 24px;background:#f5f3fa;overflow:hidden;">
+<section style="padding:120px 40px;background:#2A1B4A;overflow:hidden;">
   <div style="display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:64px;">
       
-      <div style="font-family:'DM Serif Text',serif;font-size:26px;font-weight:400;color:#151318;letter-spacing:-0.01em;" data-r="h-26">Síntomas frecuentes</div>
-    </div><div ref="{{ row2Ref }}" style="max-width:940px;margin:0 auto;opacity:{{ row2.op }};transform:translateY({{ row2.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
+      <div style="font-family:'Poppins',sans-serif;font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;text-align:center;color:#ffffff;" data-r="h-26">Síntomas frecuentes</div>
+    </div><div ref="{{ row2Ref }}" style="max-width:1100px;margin:0 auto;opacity:{{ row2.op }};transform:translateY({{ row2.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
     
-    <div style="position:relative;display:grid;grid-template-columns:1fr 200px 1fr;align-items:center;gap:0;min-height:460px;" data-r="sym">
+    <div style="position:relative;display:grid;grid-template-columns:minmax(0,380px) 240px minmax(0,380px);justify-content:center;align-items:center;gap:0;" data-r="sym">
       <div data-r="sym-left" style="display:flex;flex-direction:column;gap:20px;padding-right:20px;">
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:16px;padding:16px 20px;box-shadow:0 10px 28px rgba(139,63,230,0.12);flex:1;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#8b3fe6;flex:none;display:flex;align-items:center;justify-content:center;gap:2px;">
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tl }}px);transition:opacity 0.6s ease 0ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 0ms;">
+          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:20px;padding:14px 22px;min-height:84px;box-shadow:0 12px 30px rgba(0,0,0,0.18);flex:1;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FF5C2B;flex:none;display:flex;align-items:center;justify-content:center;gap:2px;">
               <div style="width:3px;height:8px;background:#ffffff;border-radius:2px;"></div>
               <div style="width:3px;height:14px;background:#ffffff;border-radius:2px;"></div>
               <div style="width:3px;height:10px;background:#ffffff;border-radius:2px;"></div>
             </div>
-            <div style="font-size:14px;font-weight:700;color:#151318;">Debilidad y fatiga</div>
+            <div style="font-size:16px;font-weight:600;color:#2A1B4A;">Debilidad y fatiga</div>
           </div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
         </div>
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:16px;padding:16px 20px;box-shadow:0 10px 28px rgba(139,63,230,0.12);flex:1;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#8b3fe6;flex:none;display:flex;align-items:center;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tl }}px);transition:opacity 0.6s ease 120ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 120ms;">
+          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:20px;padding:14px 22px;min-height:84px;box-shadow:0 12px 30px rgba(0,0,0,0.18);flex:1;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FF5C2B;flex:none;display:flex;align-items:center;justify-content:center;">
               <div style="width:13px;height:16px;background:#ffffff;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;position:relative;">
-                <div style="position:absolute;left:50%;top:15%;bottom:15%;width:1.5px;background:#8b3fe6;transform:translateX(-50%);"></div>
+                <div style="position:absolute;left:50%;top:15%;bottom:15%;width:1.5px;background:#FF5C2B;transform:translateX(-50%);"></div>
               </div>
             </div>
-            <div style="font-size:14px;font-weight:700;color:#151318;">Cambios en el gusto</div>
+            <div style="font-size:16px;font-weight:600;color:#2A1B4A;">Cambios en el gusto</div>
           </div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
         </div>
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:16px;padding:16px 20px;box-shadow:0 10px 28px rgba(139,63,230,0.12);flex:1;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#8b3fe6;flex:none;display:flex;align-items:center;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tl }}px);transition:opacity 0.6s ease 240ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 240ms;">
+          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:20px;padding:14px 22px;min-height:84px;box-shadow:0 12px 30px rgba(0,0,0,0.18);flex:1;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FF5C2B;flex:none;display:flex;align-items:center;justify-content:center;">
               <svg width="18" height="18" viewBox="0 0 18 18"><path d="M2 9 Q5.5 2 9 9 T16 9" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path></svg>
             </div>
-            <div style="font-size:14px;font-weight:700;color:#151318;">Náuseas</div>
+            <div style="font-size:16px;font-weight:600;color:#2A1B4A;">Náuseas</div>
           </div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
         </div>
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:16px;padding:16px 20px;box-shadow:0 10px 28px rgba(139,63,230,0.12);flex:1;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#8b3fe6;flex:none;display:flex;align-items:center;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tl }}px);transition:opacity 0.6s ease 360ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 360ms;">
+          <div style="display:flex;align-items:center;gap:14px;background:#ffffff;border-radius:20px;padding:14px 22px;min-height:84px;box-shadow:0 12px 30px rgba(0,0,0,0.18);flex:1;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FF5C2B;flex:none;display:flex;align-items:center;justify-content:center;">
               <div style="width:14px;height:14px;background:#ffffff;border-radius:50% 50% 50% 0;transform:rotate(45deg);"></div>
             </div>
-            <div style="font-size:14px;font-weight:700;color:#151318;">Boca seca</div>
+            <div style="font-size:16px;font-weight:600;color:#2A1B4A;">Boca seca</div>
           </div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
         </div>
       </div>
 
-      <div data-r="petal" style="position:relative;width:200px;height:440px;">
-        <div style="position:absolute;left:50%;top:50%;width:340px;height:340px;background:#8b3fe6;filter:blur(70px);opacity:0.35;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;"></div>
-        <svg viewBox="0 0 200 440" style="position:relative;width:200px;height:440px;display:block;">
-          <line x1="70.0" y1="142.0" x2="70.0" y2="120.0" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.35"></line>
-          <line x1="79.1" y1="142.5" x2="81.6" y2="120.7" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.43"></line>
-          <line x1="88.0" y1="144.1" x2="93.1" y2="122.7" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.50"></line>
-          <line x1="96.7" y1="146.7" x2="104.2" y2="126.0" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.57"></line>
-          <line x1="105.0" y1="150.3" x2="114.9" y2="130.6" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.64"></line>
-          <line x1="112.9" y1="154.8" x2="125.0" y2="136.5" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.71"></line>
-          <line x1="120.1" y1="160.2" x2="134.3" y2="143.4" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.77"></line>
-          <line x1="126.7" y1="166.5" x2="142.7" y2="151.4" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.82"></line>
-          <line x1="132.6" y1="173.4" x2="150.2" y2="160.3" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.87"></line>
-          <line x1="137.5" y1="181.0" x2="156.6" y2="170.0" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.91"></line>
-          <line x1="141.6" y1="189.1" x2="161.8" y2="180.4" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.95"></line>
-          <line x1="144.7" y1="197.6" x2="165.8" y2="191.3" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.97"></line>
-          <line x1="146.8" y1="206.5" x2="168.5" y2="202.6" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.99"></line>
-          <line x1="147.9" y1="215.5" x2="169.8" y2="214.2" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="1.00"></line>
-          <line x1="147.9" y1="224.5" x2="169.8" y2="225.8" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="1.00"></line>
-          <line x1="146.8" y1="233.5" x2="168.5" y2="237.4" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.99"></line>
-          <line x1="144.7" y1="242.4" x2="165.8" y2="248.7" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.97"></line>
-          <line x1="141.6" y1="250.9" x2="161.8" y2="259.6" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.95"></line>
-          <line x1="137.5" y1="259.0" x2="156.6" y2="270.0" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.91"></line>
-          <line x1="132.6" y1="266.6" x2="150.2" y2="279.7" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.87"></line>
-          <line x1="126.7" y1="273.5" x2="142.7" y2="288.6" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.82"></line>
-          <line x1="120.1" y1="279.8" x2="134.3" y2="296.6" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.77"></line>
-          <line x1="112.9" y1="285.2" x2="125.0" y2="303.5" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.71"></line>
-          <line x1="105.0" y1="289.7" x2="114.9" y2="309.4" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.64"></line>
-          <line x1="96.7" y1="293.3" x2="104.2" y2="314.0" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.57"></line>
-          <line x1="88.0" y1="295.9" x2="93.1" y2="317.3" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.50"></line>
-          <line x1="79.1" y1="297.5" x2="81.6" y2="319.3" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.43"></line>
-          <line x1="70.0" y1="298.0" x2="70.0" y2="320.0" stroke="#8b3fe6" stroke-width="3" stroke-linecap="round" opacity="0.35"></line>
-        </svg>
+      <div data-r="petal" style="position:relative;display:flex;justify-content:center;align-items:center;width:240px;align-self:stretch;">
+        <div style="position:relative;width:150px;height:150px;border-radius:50%;background:#FF5C2B;opacity:{{ symA.o }};transform:scale({{ symA.sc }});transition:opacity 0.5s ease 0.3s, transform 0.9s cubic-bezier(.3,1.5,.5,1) 0.3s;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 16px rgba(255,92,43,0.28), 0 0 0 32px rgba(255,92,43,0.12);">
+          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;line-height:1.15;color:#ffffff;">Síntomas</div>
+        </div>
       </div>
 
-      <div data-r="sym-right" style="display:flex;flex-direction:column;gap:52px;padding-left:20px;">
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="text-align:left;flex:1;">
-            <div style="font-size:38px;font-weight:800;color:#151318;line-height:1;">59%</div>
-            <div style="font-size:12.5px;color:#5c5766;max-width:220px;line-height:1.5;margin-top:4px;">de los pacientes presenta debilidad y fatiga — el síntoma más frecuente.</div>
+      <div data-r="sym-right" style="display:flex;flex-direction:column;gap:20px;padding-left:20px;">
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tr }}px);transition:opacity 0.6s ease 450ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 450ms;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="display:flex;align-items:center;gap:16px;flex:1;min-height:84px;padding:14px 22px;border-radius:20px;border:1.5px solid rgba(201,184,250,0.35);">
+            <div style="flex:none;width:92px;font-size:30px;font-weight:800;letter-spacing:-0.03em;color:#ffffff;line-height:1;">59%</div>
+            <div style="font-size:13px;color:#ffffff;line-height:1.4;margin:0;">de los pacientes presenta debilidad y fatiga — el síntoma más frecuente.</div>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="text-align:left;flex:1;">
-            <div style="font-size:38px;font-weight:800;color:#151318;line-height:1;">52,6%</div>
-            <div style="font-size:12.5px;color:#5c5766;max-width:220px;line-height:1.5;margin-top:4px;">presenta cambios en el gusto (disgeusia) durante el tratamiento.</div>
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tr }}px);transition:opacity 0.6s ease 570ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 570ms;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="display:flex;align-items:center;gap:16px;flex:1;min-height:84px;padding:14px 22px;border-radius:20px;border:1.5px solid rgba(201,184,250,0.35);">
+            <div style="flex:none;width:92px;font-size:30px;font-weight:800;letter-spacing:-0.03em;color:#ffffff;line-height:1;">52,6%</div>
+            <div style="font-size:13px;color:#ffffff;line-height:1.4;margin:0;">presenta cambios en el gusto (disgeusia) durante el tratamiento.</div>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="text-align:left;flex:1;">
-            <div style="font-size:38px;font-weight:800;color:#151318;line-height:1;">40,3%</div>
-            <div style="font-size:12.5px;color:#5c5766;max-width:220px;line-height:1.5;margin-top:4px;">experimenta náuseas durante el tratamiento.</div>
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tr }}px);transition:opacity 0.6s ease 690ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 690ms;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="display:flex;align-items:center;gap:16px;flex:1;min-height:84px;padding:14px 22px;border-radius:20px;border:1.5px solid rgba(201,184,250,0.35);">
+            <div style="flex:none;width:92px;font-size:30px;font-weight:800;letter-spacing:-0.03em;color:#ffffff;line-height:1;">40,3%</div>
+            <div style="font-size:13px;color:#ffffff;line-height:1.4;margin:0;">experimenta náuseas durante el tratamiento.</div>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:0;">
-          <div style="width:7px;height:7px;border-radius:50%;background:#8b3fe6;flex:none;"></div>
-          <div style="width:36px;height:1px;background:#c9b3ea;flex:none;"></div>
-          <div style="text-align:left;flex:1;">
-            <div style="font-size:38px;font-weight:800;color:#151318;line-height:1;">30,1%</div>
-            <div style="font-size:12.5px;color:#5c5766;max-width:220px;line-height:1.5;margin-top:4px;">padece boca seca (xerostomía).</div>
+        <div style="display:flex;align-items:center;gap:0;opacity:{{ symA.o }};transform:translateX({{ symA.tr }}px);transition:opacity 0.6s ease 810ms, transform 0.8s cubic-bezier(.2,.8,.2,1) 810ms;">
+          <div style="width:7px;height:7px;border-radius:50%;background:#FF5C2B;flex:none;"></div>
+          <div style="width:{{ symA.lw }}px;height:2px;background:rgba(255,92,43,0.6);flex:none;transition:width 0.6s ease 0.9s;"></div>
+          <div style="display:flex;align-items:center;gap:16px;flex:1;min-height:84px;padding:14px 22px;border-radius:20px;border:1.5px solid rgba(201,184,250,0.35);">
+            <div style="flex:none;width:92px;font-size:30px;font-weight:800;letter-spacing:-0.03em;color:#ffffff;line-height:1;">30,1%</div>
+            <div style="font-size:13px;color:#ffffff;line-height:1.4;margin:0;">padece boca seca (xerostomía).</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div style="max-width:640px;margin:64px auto 0;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:14px;padding:18px 24px;box-shadow:0 8px 24px rgba(20,15,30,0.05);">
-      <div style="font-size:30px;font-weight:800;color:#8b3fe6;flex:none;">78%</div>
-      <div style="font-size:13px;color:#40384a;line-height:1.4;">de los pacientes experimenta síntomas que afectan su alimentación durante los días posteriores a la sesión de quimioterapia.</div>
+    <div style="max-width:640px;margin:64px auto 0;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:24px;padding:22px 28px;">
+      <div style="font-size:40px;font-weight:800;letter-spacing:-0.03em;color:#FF5C2B;flex:none;">78%</div>
+      <div style="font-size:15px;color:#2A1B4A;font-weight:500;line-height:1.4;">de los pacientes experimenta síntomas que afectan su alimentación durante los días posteriores a la sesión de quimioterapia.</div>
     </div>
   </div>
 </section>
 
-<section style="padding:110px 24px;background:#f7f8f9;">
-  <div ref="{{ row4Ref }}" style="max-width:910px;margin:0 auto;opacity:{{ row4.op }};transform:translateY({{ row4.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
-    <div style="background: #ffffff; border-radius: 20px; padding: 48px; box-shadow: 0 12px 32px rgba(20,15,30,0.06); width: 910px; height: 372px" data-r="card3">
-        <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;">
+<section style="padding:120px 40px;background:#ffffff;">
+  <div ref="{{ row4Ref }}" style="max-width:1100px;margin:0 auto;opacity:{{ row4.op }};transform:translateY({{ row4.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
+    <div style="background: #F7F2EC; border-radius: 24px; padding: 56px 48px; width: 100%" data-r="card3">
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px;">
           
-          <div style="font-family:'DM Serif Text',serif;font-size:18px;font-weight:400;color:#151318;letter-spacing:0.01em;">Detectarlo no es simple</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.02em;line-height:1.05;text-align:center;color:#2A1B4A;">Detectarlo no es simple</div>
         </div>
-        <div data-r="card3-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+        <div data-r="card3-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;">
           <div style="display:flex;flex-direction:column;align-items:center;text-align:center;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#ec8337;display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-direction:column;gap:3px;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#FF5C2B;display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-direction:column;gap:3px;">
               <div style="width:16px;height:3px;background:#ffffff;border-radius:2px;"></div>
               <div style="width:10px;height:3px;background:#ffffff;border-radius:2px;"></div>
             </div>
-            <div style="font-size:28px;font-weight:800;color:#ec8337;margin-bottom:6px;">52,6%</div>
-            <div style="font-size: 12.5px; color: #5c5766; line-height: 1.5; width: 253px; height: 102px" data-r="fx">de los pacientes oncológicos tiene exceso de peso al momento del diagnóstico — lo que dificulta la detección de desnutrición mediante el IMC.</div>
+            <div style="font-size:52px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#FF5C2B;margin-bottom:6px;">52,6%</div>
+            <div style="font-size: 15px; color: #2A1B4A; line-height: 1.5; max-width: 280px" data-r="fx">de los pacientes oncológicos tiene exceso de peso al momento del diagnóstico — lo que dificulta la detección de desnutrición mediante el IMC.</div>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;border-left:1px solid #eee;padding-left:16px;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#ec8337;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;border-left:1px solid rgba(42,27,74,0.15);padding-left:16px;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#FF5C2B;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
               <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v9M4 8l4 4 4-4" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </div>
-            <div style="font-size:28px;font-weight:800;color:#ec8337;margin-bottom:6px;">23%</div>
-            <div style="font-size: 12.5px; color: #5c5766; line-height: 1.5; width: 202px; height: 83px" data-r="fx">ya presenta desnutrición al momento del diagnóstico.</div>
+            <div style="font-size:52px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#FF5C2B;margin-bottom:6px;">23%</div>
+            <div style="font-size: 15px; color: #2A1B4A; line-height: 1.5; max-width: 260px" data-r="fx">ya presenta desnutrición al momento del diagnóstico.</div>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;border-left:1px solid #eee;padding-left:16px;">
-            <div style="width:38px;height:38px;border-radius:50%;background:#ec8337;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;border-left:1px solid rgba(42,27,74,0.15);padding-left:16px;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#FF5C2B;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
               <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 14C8 14 2 10.2 2 6.4C2 4.2 3.8 2.8 5.7 2.8C6.9 2.8 7.6 3.4 8 4C8.4 3.4 9.1 2.8 10.3 2.8C12.2 2.8 14 4.2 14 6.4C14 10.2 8 14 8 14Z" fill="#ffffff"></path></svg>
-            </div><div style="font-size: 12.5px; color: #5c5766; line-height: 1.5; width: 274px; height: 185px; margin-top: 14px; margin-bottom: 14px" data-r="fx"><span style="font-size: 14px; font-weight: 800; color: #ec8337">Las guías médicas internacionales</span>, como SEOM y ESPEN, recomiendan evaluar el estado nutricional desde el diagnóstico y durante todo el tratamiento. No como un chequeo aparte, sino como parte de la consulta.</div>
+            </div><div style="font-size: 15px; color: #2A1B4A; line-height: 1.5; max-width: 300px" data-r="fx"><span style="font-size: 17px; font-weight: 800; color: #FF5C2B">Las guías médicas internacionales</span>, como SEOM y ESPEN, recomiendan evaluar el estado nutricional desde el diagnóstico y durante todo el tratamiento. No como un chequeo aparte, sino como parte de la consulta.</div>
             
           </div>
         </div>
@@ -332,21 +274,21 @@
   </div>
 </section>
 
-<section style="padding:110px 24px;background:linear-gradient(135deg, #7530d4, #a668ee);">
-  <div ref="{{ row5Ref }}" style="max-width:900px;margin:0 auto;opacity:{{ row5.op }};transform:translateY({{ row5.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
-    <div style="text-align:center;margin-bottom:32px;">
-      <div style="font-family: 'DM Serif Text',serif; font-size: 18px; font-weight: 400; color: #ffffff; letter-spacing: 0.01em; text-align: left">La intervención temprana cambia el pronóstico</div>
+<section style="padding:120px 40px;background:#7B55E8;">
+  <div ref="{{ row5Ref }}" style="max-width:1100px;margin:0 auto;opacity:{{ row5.op }};transform:translateY({{ row5.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="font-family: 'Poppins',sans-serif; font-size: clamp(32px,3.6vw,52px); font-weight: 800; color: #ffffff; letter-spacing: -0.02em; line-height: 1.05; text-align: left; max-width: 720px">La intervención temprana cambia el pronóstico</div>
     </div>
-    <div style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;" data-r="int">
+    <div style="display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:56px;align-items:center;" data-r="int">
       <div>
-        <div style="display:inline-block;background:rgba(255,255,255,0.16);border-radius:10px;padding:8px 14px;margin-bottom:14px;">
-          <span style="font-size:28px;font-weight:800;color:#ffffff;">2,5%</span>
-          <span style="font-size:13px;color:rgba(255,255,255,0.85);"> del peso corporal es un factor de riesgo de mortalidad en pacientes oncológicos</span>
+        <div style="display:inline-block;background:#ffffff;border-radius:24px;padding:22px 24px;margin-bottom:20px;">
+          <span style="display:block;font-size:56px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:#FF5C2B;margin-bottom:8px;">2,5%</span>
+          <span style="font-size:15px;color:#2A1B4A;font-weight:500;"> del peso corporal es un factor de riesgo de mortalidad en pacientes oncológicos</span>
         </div>
-        <div style="font-size:15px;color:rgba(255,255,255,0.92);line-height:1.6;">La efectividad de la intervención nutricional disminuye a medida que aumenta el porcentaje de peso perdido. Intervenir temprano marca la diferencia.</div>
+        <div style="font-size:15px;color:#ffffff;line-height:1.55;">La efectividad de la intervención nutricional disminuye a medida que aumenta el porcentaje de peso perdido. Intervenir temprano marca la diferencia.</div>
       </div>
       <div>
-        <svg viewBox="0 0 460 220" style="width:100%;height:220px;display:block;">
+        <svg viewBox="0 0 460 220" style="width:100%;height:auto;min-height:320px;display:block;overflow:visible;">
         <line x1="50" y1="10" x2="50" y2="180" stroke="rgba(255,255,255,0.3)" stroke-width="1"></line>
         <line x1="50" y1="180" x2="440" y2="180" stroke="rgba(255,255,255,0.3)" stroke-width="1"></line>
         <line x1="50" y1="138" x2="440" y2="138" stroke="rgba(255,255,255,0.15)" stroke-width="1"></line>
@@ -357,82 +299,59 @@
         <text x="42" y="100" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="end">50%</text>
         <text x="42" y="58" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="end">75%</text>
         <text x="42" y="16" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="end">100%</text>
-        <polyline points="70,12 150,26 230,60 310,110 410,152" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="{{ lineDraw.len }}" stroke-dashoffset="{{ lineDraw.offset }}" style="transition:stroke-dashoffset 1.8s ease 0.2s;"></polyline>
-        <circle cx="70" cy="12" r="5" fill="#ffffff"></circle>
-        <circle cx="150" cy="26" r="5" fill="#ffffff"></circle>
-        <circle cx="230" cy="60" r="5" fill="#ffffff"></circle>
-        <circle cx="310" cy="110" r="5" fill="#ffffff"></circle>
-        <circle cx="410" cy="152" r="5" fill="#ffffff"></circle>
+        <polyline points="70,12 150,26 230,60 310,110 410,152" fill="none" stroke="#FF5C2B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="{{ lineDraw.len }}" stroke-dashoffset="{{ lineDraw.offset }}" style="transition:stroke-dashoffset 1.8s ease 0.2s;"></polyline>
+        <circle cx="70" cy="12" r="6" fill="#ffffff"></circle>
+        <circle cx="150" cy="26" r="6" fill="#ffffff"></circle>
+        <circle cx="230" cy="60" r="6" fill="#ffffff"></circle>
+        <circle cx="310" cy="110" r="6" fill="#ffffff"></circle>
+        <circle cx="410" cy="152" r="6" fill="#ffffff"></circle>
         <text x="70" y="198" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">0%</text>
         <text x="150" y="198" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">2%</text>
         <text x="230" y="198" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">5%</text>
         <text x="310" y="198" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">10%</text>
         <text x="410" y="198" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">15%+</text>
       </svg>
-      <div style="text-align:center;font-size:11.5px;color:rgba(255,255,255,0.7);margin-top:6px;">% de peso perdido</div>
+      <div style="text-align:center;font-size:11.5px;color:#ffffff;margin-top:6px;font-weight:500;">% de peso perdido</div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="padding:130px 24px;background:#eeecf1;">
-  <div ref="{{ suplementosRef }}" style="max-width:1000px;margin:0 auto;opacity:{{ suplementos.op }};transform:translateY({{ suplementos.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
+<section style="padding:120px 40px;background:#F7F2EC;">
+  <div ref="{{ suplementosRef }}" style="max-width:1100px;margin:0 auto;opacity:{{ suplementos.op }};transform:translateY({{ suplementos.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
     <div style="text-align:center;margin-bottom:40px;">
-      <div style="font-family: 'DM Serif Text',serif; font-size: 52px; font-weight: 400; color: #151318; letter-spacing: -0.02em; line-height: 1.08; opacity: {{ suplementos.op }}; transition: opacity 1s ease 0.2s; text-align: left" data-r="h-52">Hay herramientas, <span style="color:#8b3fe6;">suplementos orales</span></div>
+      <div style="font-family: 'Poppins',sans-serif; font-size: 60px; font-weight: 800; color: #2A1B4A; letter-spacing: -0.02em; line-height: 1.08; opacity: {{ suplementos.op }}; transition: opacity 1s ease 0.2s; text-align: left" data-r="h-52">Hay herramientas,<br><span style="color:#FF5C2B;">suplementos orales</span></div>
     </div>
-    <p data-r="p-19" style="font-size:19px;line-height:1.7;color:#3a3542;margin:0 0 48px;max-width:760px;">Durante el tratamiento oncológico, comer lo suficiente puede volverse difícil. Los suplementos orales existen para acompañar ese proceso: se indican cuando la ingesta cae por debajo de lo que el cuerpo necesita y permiten sostener el estado nutricional sin reemplazar la alimentación habitual.</p>
+    <p data-r="p-19" style="font-size:19px;line-height:1.7;color:#4a4060;margin:0 0 48px;text-wrap:pretty;max-width:760px;">Durante el tratamiento oncológico, comer lo suficiente puede volverse difícil. Los suplementos orales existen para acompañar ese proceso: se indican cuando la ingesta cae por debajo de lo que el cuerpo necesita y permiten sostener el estado nutricional sin reemplazar la alimentación habitual.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;" data-r="g2">
-      <div style="background:#ffffff;border-radius:20px;padding:36px;box-shadow:0 16px 40px rgba(20,15,30,0.08);">
+      <div style="background:#ffffff;border-radius:24px;padding:40px;box-shadow:0 14px 36px rgba(74,44,138,0.08);">
         <div style="display:flex;align-items:stretch;gap:16px;">
           <div data-r="pie" style="position:relative;flex:none;aspect-ratio:1/1;height:auto;align-self:stretch;">
-            <div style="position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg, #7530d4 0%, #a668ee 25%, #e4ddef 25%, #e4ddef 100%);"></div>
+            <div style="position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg, #FF5C2B 0%, #FF5C2B 25%, #FFE1D6 25%, #FFE1D6 100%);"></div>
           </div>
           <div>
-            <div style="width:32px;height:32px;border-radius:50%;background:#8b3fe6;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+            <div style="width:32px;height:32px;border-radius:50%;background:#FF5C2B;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
               <svg width="16" height="16" viewBox="0 0 16 16" style="display:block;"><path d="M8 2v9M4 8l4 4 4-4" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </div>
-            <div style="font-size:16px;color:#3a3542;line-height:1.6;">Los suplementos orales se indican cuando la ingesta cae un <strong style="font-size:16px;font-weight:700;color:#3a3542;">25%</strong> por debajo de lo habitual.</div>
+            <div style="font-size:17px;color:#2A1B4A;line-height:1.5;">Los suplementos orales se indican cuando la ingesta cae un <strong style="font-size:17px;font-weight:800;color:#FF5C2B;">25%</strong> por debajo de lo habitual.</div>
           </div>
         </div>
       </div>
-      <div style="background:#ffffff;border-radius:20px;padding:36px;box-shadow:0 16px 40px rgba(20,15,30,0.08);">
-        <div style="font-size:14px;color:#5c5766;margin-bottom:8px;">Pueden aportar hasta</div>
-        <div data-r="kcal" style="font-size:56px;font-weight:800;color:#8b3fe6;line-height:1;margin-bottom:6px;">600 kcal</div>
-        <div style="font-size:14px;color:#5c5766;">adicionales por día.</div>
+      <div style="background:#ffffff;border-radius:24px;padding:40px;box-shadow:0 14px 36px rgba(74,44,138,0.08);">
+        <div style="font-size:16px;color:#2A1B4A;margin-bottom:8px;">Pueden aportar hasta</div>
+        <div data-r="kcal" style="font-size:64px;font-weight:800;letter-spacing:-0.03em;color:#7B55E8;line-height:1;margin-bottom:6px;">600 kcal</div>
+        <div style="font-size:16px;color:#2A1B4A;">adicionales por día.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="padding:80px 24px;background:#8b3fe6;">
-  <div style="max-width:820px;margin:0 auto;text-align:center;color:#ffffff;">
-    <div style="font-family:'DM Serif Text',serif;font-size:26px;font-weight:400;margin-bottom:10px;letter-spacing:-0.01em;" data-r="h-26">La nutrición oncológica es parte fundamental del tratamiento <br>contra el cáncer.</div>
-    <div style="font-size:17px;opacity:0.85;margin-bottom:18px;">Sin nutrición, falta algo.</div>
-    <div style="font-size:15px;font-weight:700;letter-spacing:0.02em;">#TratamientoCompleto</div>
-  </div>
-</section>
 
-<div style="padding:32px 24px 56px;max-width:820px;margin:0 auto;">
-  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#d4d2d6;margin-bottom:12px;">FUENTES</div>
-  <div style="font-size:11.5px;color:#d4d2d6;line-height:1.7;">
-    Guía de Nutrición Oncológica AAOC, capítulo 15 — Carolina Niño y Priscila Navarrete. Revisores: Agustín Falco, Federico Esteso y Zunino.<br>
-    Echepare M.L., Roldán M.B., Vilas S.Y., Villarreal E.N. — Valoración del estado nutricional en pacientes oncológicos adultos del HIGA Prof. Dr. Luis Güemes, Haedo. Actualización en Nutrición, Vol. 25 N°2, abril-junio 2024.<br>
-    Manzur &amp; Kohan-Cortada — Actualización en Nutrición, Vol. 25 N°4, 2024.<br>
-    ONCOvida N°27, SEOM — La nutrición en el paciente oncológico.
-  </div>
-</div>
+
 </div>
 
 <div style="display:{{ tabBDisplay }};font-family:'Poppins',sans-serif;background:#F7F2EC;">
-<section data-r="p2-hero" style="position:relative;min-height:calc(100vh - 54px);background:#F7F2EC;overflow:hidden;display:flex;align-items:center;padding:80px 24px;">
-  <div style="position:relative;max-width:1200px;margin:0 auto;width:100%;">
-    <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#4A2C8A;font-weight:700;margin-bottom:28px;">¿Cuánto sabemos de nutrición oncológica?</div>
-    <h1 data-r="p2-h1" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(64px,11vw,160px);line-height:0.92;letter-spacing:-0.03em;margin:0;text-transform:uppercase;"><span style="display:block;color:#FF5C2B;">Tratamiento</span><span style="display:block;color:#4A2C8A;">completo.</span></h1>
-    <p style="max-width:380px;font-size:16px;line-height:1.5;color:#2A1B4A;margin:32px 0 0;font-weight:500;text-wrap:pretty;">La nutrición oncológica también forma parte del tratamiento oncológico integral.</p>
-  </div>
-</section>
-
-<section ref="{{ p2ResRef }}" style="padding:120px 24px;background:#2A1B4A;">
+<section ref="{{ p2ResRef }}" style="padding:120px 40px;background:#2A1B4A;">
   <div style="max-width:1100px;margin:0 auto;">
     <div style="font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#F7F2EC;margin-bottom:28px;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#FF5C2B;"></span>Resultados de la intervención en la ciudad</div>
     <div data-r="p2-g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:0;align-items:stretch;margin-top:12px;">
@@ -475,25 +394,45 @@
       </div>
     </div>
 
+    <div style="padding-top:56px;border-top:1px solid rgba(201,184,250,0.2);margin-top:56px;">
+      <button onClick="{{ toggleDemo }}" style="display:inline-flex;align-items:center;gap:14px;padding:10px 18px;border-radius:999px;border:1.5px solid #C9B8FA;background:{{ demoBtn.bg }};color:{{ demoBtn.ink }};font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:background 0.2s ease, color 0.2s ease;">Datos demográficos <span style="display:inline-block;transform:rotate({{ demoBtn.rot }}deg);transition:transform 0.3s ease;">▾</span></button>
+      <sc-if value="{{ demoOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:28px;background:#ffffff;border-radius:24px;padding:48px 44px;">
+          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;margin-bottom:40px;">¿Quiénes respondieron?</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px 56px;">
+      <sc-for list="{{ demo }}" as="q" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="font-size:16px;font-weight:700;color:#2A1B4A;padding-bottom:14px;border-bottom:2px solid #2A1B4A;">{{ q.label }}</div>
+          <sc-for list="{{ q.rows }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;color:#2A1B4A;"><span>{{ r.name }}</span><span style="font-weight:700;">{{ r.pctTxt }}</span></div>
+              <div style="height:10px;border-radius:5px;background:#EDE6FD;overflow:hidden;"><div style="height:100%;width:{{ r.w }};border-radius:5px;background:{{ r.dcol }};transition:width 0.9s ease;"></div></div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+        </div>
+      </sc-if>
+    </div>
   </div>
 </section>
 
 <section style="padding:0;">
   <div data-r="p2-g2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));">
-    <div data-r="p2-panel" style="background:#F7F2EC;min-height:34vh;padding:64px 44px 48px;display:flex;flex-direction:column;gap:18px;">
-      <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#4A2C8A;">{{ hechos.a.label }}</div>
+    <div data-r="p2-panel" style="background:#F7F2EC;min-height:34vh;padding:64px 40px 56px max(40px, calc((100vw - 1100px) / 2));display:flex;flex-direction:column;gap:18px;">
+      <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;line-height:1.5;min-height:3em;color:#4A2C8A;">{{ hechos.a.label }}</div>
       <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#FF5C2B;">{{ hechos.a.pctTxt }}</div>
-      <div style="font-size:20px;line-height:1.4;color:#2A1B4A;max-width:420px;">respondió “{{ hechos.a.name }}”.</div>
+      <div style="font-size:20px;line-height:1.4;color:#2A1B4A;max-width:420px;min-height:2.8em;">respondió “{{ hechos.a.name }}”.</div>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
         <sc-for list="{{ hechos.a.rest }}" as="r" hint-placeholder-count="2">
           <div style="display:flex;justify-content:space-between;gap:16px;font-size:15px;color:#2A1B4A;padding-top:8px;border-top:1px solid rgba(42,27,74,0.15);"><span>{{ r.name }}</span><span style="font-weight:700;">{{ r.pctTxt }}</span></div>
         </sc-for>
       </div>
     </div>
-    <div data-r="p2-panel" style="background:#7B55E8;min-height:34vh;padding:64px 44px 48px;display:flex;flex-direction:column;gap:18px;">
-      <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#F7F2EC;">{{ hechos.b.label }}</div>
+    <div data-r="p2-panel" style="background:#7B55E8;min-height:34vh;padding:64px max(40px, calc((100vw - 1100px) / 2)) 56px 40px;display:flex;flex-direction:column;gap:18px;">
+      <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;line-height:1.5;min-height:3em;color:#F7F2EC;">{{ hechos.b.label }}</div>
       <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#ffffff;">{{ hechos.b.pctTxt }}</div>
-      <div style="font-size:20px;line-height:1.4;color:#ffffff;max-width:420px;">respondió “{{ hechos.b.name }}”.</div>
+      <div style="font-size:20px;line-height:1.4;color:#ffffff;max-width:420px;min-height:2.8em;">respondió “{{ hechos.b.name }}”.</div>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
         <sc-for list="{{ hechos.b.rest }}" as="r" hint-placeholder-count="2">
           <div style="display:flex;justify-content:space-between;gap:16px;font-size:15px;color:#ffffff;padding-top:8px;border-top:1px solid rgba(255,255,255,0.3);"><span>{{ r.name }}</span><span style="font-weight:700;">{{ r.pctTxt }}</span></div>
@@ -507,72 +446,9 @@
 
 
 
-<section style="padding:56px 24px;background:#EDE6FD;">
-  <div style="max-width:1000px;margin:0 auto;text-align:center;margin-bottom:32px;">
-    <div data-r="p2-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(36px,4vw,52px);line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;">Respondé vos también.</div>
-  </div>
-  <div style="width:340px;max-width:100%;margin:0 auto;padding:10px;border-radius:54px;background:linear-gradient(145deg,#3a3a40,#121214);box-shadow:0 0 0 2px #55555c inset, 0 40px 90px rgba(42,27,74,0.35);position:relative;">
-    <div style="position:absolute;left:-3px;top:150px;width:4px;height:34px;border-radius:2px;background:#2a2a2e;"></div>
-    <div style="position:absolute;left:-3px;top:200px;width:4px;height:60px;border-radius:2px;background:#2a2a2e;"></div>
-    <div style="position:absolute;right:-3px;top:180px;width:4px;height:84px;border-radius:2px;background:#2a2a2e;"></div>
-    <div style="position:relative;border-radius:44px;overflow:hidden;background:#F7F4FF;height:680px;display:flex;flex-direction:column;">
-      <div style="flex:none;display:flex;justify-content:space-between;align-items:center;height:48px;padding:0 30px;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#2A1B4A;position:relative;">
-        <span>9:41</span>
-        <div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:120px;height:34px;border-radius:20px;background:#0b0b0c;"></div>
-        <div style="width:24px;height:12px;border:1.5px solid #2A1B4A;border-radius:4px;padding:1.5px;opacity:0.9;"><div style="width:75%;height:100%;background:#2A1B4A;border-radius:1.5px;"></div></div>
-      </div>
-      <iframe src="https://nutonco-prueba.netlify.app/" title="Encuesta #TratamientoCompleto" loading="lazy" style="flex:1;width:100%;border:0;display:block;background:#F7F4FF;"></iframe>
-      <div style="position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#2A1B4A;"></div>
-    </div>
-  </div>
-</section>
-
-
-<section style="padding:0;background:#2A1B4A;">
-  <img data-r="p2-photo" src="assets/parte-ciudad.png" alt="Instalación Nutrición Oncológica en el Obelisco" style="display:block;width:100%;height:66vh;object-fit:cover;object-position:center 55%;">
-</section>
-
-<section ref="{{ p2StatsRef }}" style="padding:0;">
-  <div data-r="p2-g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));">
-    <div data-r="p2-panel" style="background:#F7F2EC;min-height:34vh;padding:64px 44px 48px;display:flex;flex-direction:column;justify-content:flex-start;">
-      <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#FF5C2B;">{{ stat1 }}%</div>
-      <div style="font-size:20px;line-height:1.4;color:#2A1B4A;margin-top:18px;max-width:300px;">de los pacientes tuvo problemas relacionados con la alimentación.</div>
-    </div>
-    <div data-r="p2-panel" style="background:#FF5C2B;min-height:34vh;padding:64px 44px 48px;display:flex;flex-direction:column;justify-content:flex-start;">
-      <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#ffffff;">{{ stat2 }}%</div>
-      <div style="font-size:20px;line-height:1.4;color:#ffffff;margin-top:18px;max-width:320px;">de quienes tuvieron problemas relacionados con la alimentación <strong>no fueron derivados</strong> a un nutricionista para abordarlos.</div>
-    </div>
-    <div data-r="p2-panel" style="background:#7B55E8;min-height:34vh;padding:64px 44px 48px;display:flex;flex-direction:column;justify-content:flex-start;">
-      <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#ffffff;">{{ stat3 }}%</div>
-      <div style="font-size:20px;line-height:1.4;color:#ffffff;margin-top:18px;max-width:320px;">de quienes estaban en tratamiento dijeron que les preguntaban siempre o casi siempre sobre posibles dificultades con la alimentación.</div>
-    </div>
-  </div>
-</section>
-
-<section ref="{{ p2MythRef }}" onClick="{{ mythNext }}" style="position:relative;min-height:100vh;padding:120px 24px;display:flex;align-items:center;cursor:pointer;overflow:hidden;background:{{ seq.bg }};transition:background 0.8s ease;">
-  <div style="max-width:1100px;margin:0 auto;width:100%;">
-    <div style="display:flex;flex-wrap:wrap;column-gap:0.24em;font-family:'Poppins',sans-serif;font-stretch:{{ seq.stretch }};font-weight:900;font-size:{{ seq.size }};line-height:0.95;color:{{ seq.color }};max-width:1000px;">
-      <sc-for list="{{ seq.title }}" as="w" hint-placeholder-count="8"><span style="display:inline-block;flex-basis:{{ w.fb }};height:{{ w.hh }};opacity:{{ w.op }};transform:translateY({{ w.ty }}px);transition:opacity 0.5s ease, transform 0.5s cubic-bezier(.2,.8,.2,1);transition-delay:{{ w.d }}ms;">{{ w.t }}</span></sc-for>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;column-gap:0.28em;font-family:'Poppins',sans-serif;font-size:24px;line-height:1.45;font-weight:500;color:{{ seq.color }};max-width:1060px;margin-top:40px;">
-      <sc-for list="{{ seq.body }}" as="w" hint-placeholder-count="0"><span style="display:inline-block;opacity:{{ w.op }};transform:translateY({{ w.ty }}px);transition:opacity 0.4s ease, transform 0.4s ease;transition-delay:{{ w.d }}ms;">{{ w.t }}</span></sc-for>
-    </div>
-  </div>
-  <div style="position:absolute;left:24px;right:24px;bottom:36px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;">
-    <div style="display:flex;gap:6px;">
-      <sc-for list="{{ seq.dots }}" as="d" hint-placeholder-count="3"><div style="width:36px;height:5px;border-radius:3px;background:{{ d.bg }};transition:background 0.4s ease;"></div></sc-for>
-    </div>
-    <div style="font-size:13px;font-weight:700;color:{{ seq.color }};opacity:0.8;">Tocá para avanzar →</div>
-  </div>
-</section>
-
-<section style="padding:110px 24px 130px;background:#EDE6FD;">
+<section style="padding:120px 40px;background:#2A1B4A;">
   <div ref="{{ p2RingsRef }}" style="max-width:1100px;margin:0 auto;">
-    <div style="display:flex;align-items:baseline;justify-content:center;gap:0.28em;flex-wrap:wrap;margin-bottom:40px;text-align:center;font-size:clamp(26px,3vw,38px);">
-      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.1;letter-spacing:-0.02em;color:#2A1B4A;">{{ resCount }}</div>
-      <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.1;letter-spacing:-0.02em;color:#2A1B4A;">personas respondieron en el tótem</div>
-    </div>
-    <div data-r="p2-g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
+        <div data-r="p2-g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
         <div style="background:#ffffff;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 14px 36px rgba(74,44,138,0.08);">
           <div style="font-size:14px;font-weight:600;line-height:1.4;color:#7B55E8;margin-bottom:22px;min-height:40px;text-wrap:balance;">{{ rings.cA.label }}</div>
           <div style="position:relative;width:200px;height:200px;margin-bottom:22px;">
@@ -601,8 +477,67 @@
   </div>
 </section>
 
-<section style="padding:130px 24px;background:#ffffff;">
-  <div ref="{{ p2NoesRef }}" style="max-width:1000px;margin:0 auto;opacity:{{ p2Noes.op }};transform:translateY({{ p2Noes.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
+<section id="encuesta" ref="{{ encuestaRef }}" style="padding:120px 40px;background:#EDE6FD;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;margin-bottom:32px;">
+    <div data-r="p2-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(36px,4vw,52px);line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;">Respondé vos también.</div>
+  </div>
+  <div style="width:340px;max-width:100%;margin:0 auto;padding:10px;border-radius:54px;background:linear-gradient(145deg,#3a3a40,#121214);box-shadow:0 0 0 2px #55555c inset, 0 40px 90px rgba(42,27,74,0.35);position:relative;">
+    <div style="position:absolute;left:-3px;top:150px;width:4px;height:34px;border-radius:2px;background:#2a2a2e;"></div>
+    <div style="position:absolute;left:-3px;top:200px;width:4px;height:60px;border-radius:2px;background:#2a2a2e;"></div>
+    <div style="position:absolute;right:-3px;top:180px;width:4px;height:84px;border-radius:2px;background:#2a2a2e;"></div>
+    <div style="position:relative;border-radius:44px;overflow:hidden;background:#F7F4FF;height:680px;display:flex;flex-direction:column;">
+      <div style="flex:none;display:flex;justify-content:space-between;align-items:center;height:48px;padding:0 30px;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#2A1B4A;position:relative;">
+        <span>9:41</span>
+        <div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:120px;height:34px;border-radius:20px;background:#0b0b0c;"></div>
+        <div style="width:24px;height:12px;border:1.5px solid #2A1B4A;border-radius:4px;padding:1.5px;opacity:0.9;"><div style="width:75%;height:100%;background:#2A1B4A;border-radius:1.5px;"></div></div>
+      </div>
+      <iframe src="https://nutonco-prueba.netlify.app/" title="Encuesta #TratamientoCompleto" loading="lazy" style="flex:1;width:100%;border:0;display:block;background:#F7F4FF;"></iframe>
+      <div style="position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#2A1B4A;"></div>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding:0;background:#2A1B4A;">
+  <img data-r="p2-photo" src="assets/parte-ciudad.png" alt="Instalación Nutrición Oncológica en el Obelisco" style="display:block;width:100%;height:66vh;object-fit:cover;object-position:center 65%;">
+</section>
+
+<section ref="{{ p2StatsRef }}" style="padding:0;">
+  <div data-r="p2-g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));">
+    <div data-r="p2-panel" style="background:#F7F2EC;min-height:34vh;padding:64px 40px 56px max(40px, calc((100vw - 1100px) / 2));display:flex;flex-direction:column;justify-content:flex-start;">
+      <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#FF5C2B;">{{ stat1 }}%</div>
+      <div style="font-size:20px;line-height:1.4;color:#2A1B4A;margin-top:18px;max-width:300px;">de los pacientes tuvo problemas relacionados con la alimentación.</div>
+    </div>
+    <div data-r="p2-panel" style="background:#FF5C2B;min-height:34vh;padding:64px 40px 56px 40px;display:flex;flex-direction:column;justify-content:flex-start;">
+      <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#ffffff;">{{ stat2 }}%</div>
+      <div style="font-size:20px;line-height:1.4;color:#ffffff;margin-top:18px;max-width:320px;">de quienes tuvieron problemas relacionados con la alimentación <strong>no fueron derivados</strong> a un nutricionista para abordarlos.</div>
+    </div>
+    <div data-r="p2-panel" style="background:#7B55E8;min-height:34vh;padding:64px max(40px, calc((100vw - 1100px) / 2)) 56px 40px;display:flex;flex-direction:column;justify-content:flex-start;">
+      <div data-r="p2-stat" style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(56px,7.5vw,116px);line-height:0.95;letter-spacing:-0.03em;color:#ffffff;">{{ stat3 }}%</div>
+      <div style="font-size:20px;line-height:1.4;color:#ffffff;margin-top:18px;max-width:320px;">de quienes estaban en tratamiento dijeron que les preguntaban siempre o casi siempre sobre posibles dificultades con la alimentación.</div>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ p2MythRef }}" onClick="{{ mythNext }}" style="position:relative;min-height:100vh;padding:120px 40px;display:flex;align-items:center;cursor:pointer;overflow:hidden;background:{{ seq.bg }};transition:background 0.8s ease;">
+  <div style="max-width:1100px;margin:0 auto;width:100%;">
+    <div style="display:flex;flex-wrap:wrap;column-gap:0.24em;font-family:'Poppins',sans-serif;font-stretch:{{ seq.stretch }};font-weight:900;font-size:{{ seq.size }};line-height:0.95;color:{{ seq.color }};max-width:1100px;">
+      <sc-for list="{{ seq.title }}" as="w" hint-placeholder-count="8"><span style="display:inline-block;flex-basis:{{ w.fb }};height:{{ w.hh }};opacity:{{ w.op }};transform:translateY({{ w.ty }}px);transition:opacity 0.5s ease, transform 0.5s cubic-bezier(.2,.8,.2,1);transition-delay:{{ w.d }}ms;">{{ w.t }}</span></sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;column-gap:0.28em;font-family:'Poppins',sans-serif;font-size:24px;line-height:1.45;font-weight:500;color:{{ seq.color }};max-width:1060px;margin-top:40px;">
+      <sc-for list="{{ seq.body }}" as="w" hint-placeholder-count="0"><span style="display:inline-block;opacity:{{ w.op }};transform:translateY({{ w.ty }}px);transition:opacity 0.4s ease, transform 0.4s ease;transition-delay:{{ w.d }}ms;">{{ w.t }}</span></sc-for>
+    </div>
+  </div>
+  <div style="position:absolute;left:24px;right:24px;bottom:36px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;">
+    <div style="display:flex;gap:6px;">
+      <sc-for list="{{ seq.dots }}" as="d" hint-placeholder-count="3"><div style="width:36px;height:5px;border-radius:3px;background:{{ d.bg }};transition:background 0.4s ease;"></div></sc-for>
+    </div>
+    <div style="font-size:13px;font-weight:700;color:{{ seq.color }};opacity:0.8;">Tocá para avanzar →</div>
+  </div>
+</section>
+
+<section style="padding:120px 40px;background:#ffffff;">
+  <div ref="{{ p2NoesRef }}" style="max-width:1100px;margin:0 auto;opacity:{{ p2Noes.op }};transform:translateY({{ p2Noes.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
     <div data-r="p2-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:60px;line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;margin-bottom:16px;">No es solo “comer sano”.</div>
     <p style="font-size:19px;line-height:1.6;color:#4a4060;max-width:620px;margin:0 0 56px;text-wrap:pretty;">La nutrición oncológica va mucho más allá de una dieta general. Se adapta a cada etapa del tratamiento y a cada situación individual.</p>
     <div data-r="p2-g2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
@@ -626,31 +561,9 @@
   </div>
 </section>
 
-<section style="padding:130px 24px;background:#F7F2EC;">
-  <div ref="{{ p2QueRef }}" style="max-width:1100px;margin:0 auto;opacity:{{ p2Que.op }};transform:translateY({{ p2Que.ty }}px);transition:opacity 0.7s ease, transform 0.7s ease;">
-    <div style="text-align:center;margin-bottom:64px;">
-      <div data-r="p2-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:60px;line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;margin-bottom:16px;">¿Qué es la nutrición oncológica?</div>
-      <p style="font-size:19px;line-height:1.6;color:#4a4060;max-width:620px;margin:0 auto;text-wrap:pretty;">Es el acompañamiento nutricional durante todo el tratamiento, adaptado a las necesidades de cada persona.</p>
-    </div>
-    <div data-r="sym" style="display:grid;grid-template-columns:minmax(0,1fr) 260px minmax(0,1fr);align-items:center;gap:0;">
-      <div style="display:flex;flex-direction:column;gap:56px;">
-        <div style="display:flex;align-items:center;"><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">01</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Se adapta a los cambios en el apetito, el gusto y la tolerancia.</div></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div></div>
-        <div style="display:flex;align-items:center;"><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">02</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Ayuda a mantener el estado nutricional y la fuerza.</div></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div></div>
-      </div>
-      <div style="display:flex;justify-content:center;">
-        <div style="position:relative;width:240px;height:240px;border-radius:50%;background:#7B55E8;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 18px #ECE5FD, 0 0 0 36px #FFE1D6;">
-          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:24px;line-height:1.15;color:#ffffff;padding:0 28px;">Nutrición<br>oncológica</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:56px;">
-        <div style="display:flex;align-items:center;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">03</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Puede contribuir a manejar efectos secundarios.</div></div></div>
-        <div style="display:flex;align-items:center;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5C2B;flex:none;"></div><div data-r="petal" style="width:44px;height:2px;background:#FF5C2B;opacity:0.5;flex:none;"></div><div style="flex:1;display:flex;align-items:center;gap:16px;background:#ffffff;border-radius:20px;padding:20px 22px;box-shadow:0 12px 30px rgba(74,44,138,0.08);"><div style="flex:none;width:52px;height:52px;border-radius:50%;background:#FF5C2B;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;">04</div><div style="font-family:'Poppins',sans-serif;font-size:16px;line-height:1.4;color:#2A1B4A;font-weight:500;">Siempre con seguimiento de un profesional de la salud.</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section style="min-height:calc(100vh - 54px);padding:80px 24px;background:#EDE6FD;display:flex;align-items:center;">
+
+<section style="min-height:calc(100vh - 54px);padding:80px 40px;background:#EDE6FD;display:flex;align-items:center;">
   <div style="max-width:1100px;margin:0 auto;width:100%;">
     <div data-r="p2-g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:56px;align-items:center;">
       <div>
@@ -669,64 +582,52 @@
 </section>
 
 
-<section style="position:relative;padding:150px 24px;background:#FF5C2B;overflow:hidden;">
-  
-<div style="position:relative;max-width:1000px;margin:0 auto;">
-    <div data-r="p2-h1" style="font-family: 'Poppins',sans-serif; font-weight: 900; font-size: clamp(56px,8vw,112px); line-height: 1; letter-spacing: -0.03em; color: #ffffff; max-width: 900px;">Preguntá por<br>nutrición<br>oncológica.</div>
-    <div data-r="cta-sub" style="font-size:clamp(14px,2vw,22px);line-height:1.5;color:#ffffff;margin-top:32px;white-space:nowrap;font-weight:500;">Un tratamiento integral también incluye nutrición.</div>
-  </div></section>
-<section style="padding:110px 24px;background:#ffffff;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:#4A2C8A;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><span style="width:8px;height:8px;border-radius:50%;background:#FF5C2B;"></span>Datos demográficos</div>
-    <div data-r="p2-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(32px,3.6vw,48px);line-height:1.05;letter-spacing:-0.02em;color:#2A1B4A;margin-bottom:56px;">¿Quiénes respondieron?</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px 56px;">
-      <sc-for list="{{ demo }}" as="q" hint-placeholder-count="3">
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          <div style="font-size:16px;font-weight:700;color:#2A1B4A;padding-bottom:14px;border-bottom:2px solid #2A1B4A;">{{ q.label }}</div>
-          <sc-for list="{{ q.rows }}" as="r" hint-placeholder-count="4">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <div style="display:flex;justify-content:space-between;gap:12px;font-size:15px;color:#2A1B4A;"><span>{{ r.name }}</span><span style="font-weight:700;">{{ r.pctTxt }}</span></div>
-              <div style="height:10px;border-radius:5px;background:#EDE6FD;overflow:hidden;"><div style="height:100%;width:{{ r.w }};border-radius:5px;background:{{ r.dcol }};transition:width 0.9s ease;"></div></div>
-            </div>
-          </sc-for>
-        </div>
-      </sc-for>
-    </div>
+<section style="padding:120px 40px;background:#FF5C2B;">
+  <div style="max-width:1100px;margin:0 auto;text-align:left;color:#ffffff;">
+    <div style="font-family:'Poppins',sans-serif;font-size:clamp(36px,5vw,72px);font-weight:900;line-height:1;margin-bottom:28px;letter-spacing:-0.03em;" data-r="p2-h2">La nutrición oncológica es parte fundamental del tratamiento <br>contra el cáncer.</div>
+    <div style="font-size:clamp(16px,2vw,22px);font-weight:500;margin-bottom:18px;">Sin nutrición, falta algo.</div>
+    <div style="font-size:15px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">#TratamientoCompleto</div>
   </div>
 </section>
 </div>
 
 <div style="padding:40px 24px 64px;display:flex;flex-direction:column;align-items:center;gap:20px;">
-  <div style="font-family:'DM Serif Text',serif;font-size:14px;color:#5c5766;line-height:1.6;text-align:center;max-width:560px;"><strong style="color:#8b3fe6;">#TratamientoCompleto</strong> es una campaña que impulsa la Asociación Civil Sostén para visibilizar la importancia de la nutrición oncológica en el tratamiento del cáncer.</div>
+  <div style="font-family:'Poppins',sans-serif;font-size:14px;color:#4a4060;line-height:1.6;text-align:center;max-width:560px;"><strong style="color:#FF5C2B;">#TratamientoCompleto</strong> es una campaña que impulsa la Asociación Civil Sostén para visibilizar la importancia de la nutrición oncológica en el tratamiento del cáncer.</div>
   <img src="assets/logo-sosten.png" alt="Asociación Civil Sostén" style="width:72px;height:72px;object-fit:contain;border-radius:50%;">
   <div style="display:flex;align-items:center;gap:14px;">
-    <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:20px;background:#f4f1f9;" style-hover="background:#eaddf7;">
+    <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:20px;background:#EDE6FD;" style-hover="background:#DCD2F7;">
       <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#ffffff;flex:none;">
         <svg width="16" height="16" viewBox="162 447 16 16">
-          <path d="M170 447C174.418 447 178 450.582 178 455C178 459.418 174.418 463 170 463C165.582 463 162 459.418 162 455C162 450.582 165.582 447 170 447ZM169.999 450.733C168.842 450.733 168.696 450.738 168.241 450.759C167.787 450.78 167.476 450.852 167.205 450.957C166.925 451.066 166.686 451.212 166.449 451.449C166.212 451.686 166.066 451.925 165.957 452.205C165.851 452.476 165.779 452.786 165.759 453.24C165.738 453.695 165.733 453.841 165.733 455C165.733 456.159 165.738 456.304 165.759 456.759C165.78 457.213 165.852 457.524 165.957 457.795C166.066 458.075 166.212 458.314 166.449 458.551C166.686 458.788 166.925 458.934 167.205 459.043C167.477 459.148 167.787 459.22 168.241 459.241C168.696 459.262 168.842 459.267 170 459.267C171.159 459.267 171.304 459.262 171.759 459.241C172.213 459.22 172.523 459.148 172.795 459.043C173.075 458.934 173.313 458.788 173.55 458.551C173.787 458.314 173.934 458.075 174.043 457.795C174.148 457.524 174.22 457.213 174.241 456.759C174.262 456.304 174.267 456.159 174.267 455C174.267 453.842 174.262 453.696 174.241 453.241C174.22 452.787 174.148 452.476 174.043 452.205C173.934 451.924 173.787 451.686 173.55 451.449C173.313 451.212 173.076 451.066 172.795 450.957C172.523 450.852 172.212 450.78 171.758 450.759C171.303 450.738 171.158 450.733 169.999 450.733Z" fill="#8b3fe6"></path>
-          <path d="M169.618 451.502C169.731 451.502 169.858 451.502 170.001 451.502C171.14 451.502 171.275 451.506 171.724 451.527C172.14 451.546 172.366 451.616 172.516 451.674C172.715 451.751 172.858 451.843 173.008 451.992C173.157 452.142 173.248 452.285 173.326 452.484C173.384 452.634 173.454 452.86 173.473 453.276C173.494 453.725 173.498 453.861 173.498 454.999C173.498 456.138 173.494 456.273 173.473 456.723C173.454 457.139 173.384 457.365 173.326 457.515C173.249 457.714 173.157 457.856 173.008 458.005C172.858 458.154 172.716 458.246 172.516 458.323C172.366 458.382 172.14 458.452 171.724 458.471C171.275 458.491 171.14 458.496 170.001 458.496C168.861 458.496 168.726 458.491 168.276 458.471C167.86 458.452 167.635 458.382 167.484 458.323C167.285 458.246 167.143 458.154 166.994 458.005C166.845 457.856 166.752 457.713 166.675 457.514C166.616 457.364 166.546 457.138 166.527 456.722C166.507 456.272 166.503 456.137 166.503 454.998C166.503 453.859 166.507 453.724 166.527 453.275C166.546 452.859 166.616 452.633 166.675 452.483C166.752 452.283 166.845 452.141 166.994 451.991C167.143 451.842 167.285 451.75 167.484 451.672C167.634 451.613 167.86 451.545 168.276 451.526C168.67 451.508 168.823 451.502 169.618 451.501V451.502ZM170.001 452.809C168.791 452.809 167.809 453.79 167.809 455C167.809 456.21 168.791 457.191 170.001 457.191C171.211 457.19 172.191 456.21 172.191 455C172.191 453.79 171.211 452.809 170.001 452.809ZM172.278 452.21C171.995 452.21 171.766 452.44 171.766 452.723C171.767 453.005 171.996 453.235 172.278 453.235C172.561 453.235 172.79 453.005 172.79 452.723C172.79 452.44 172.561 452.21 172.278 452.21Z" fill="#8b3fe6"></path>
-          <path d="M170 453.578C170.786 453.578 171.423 454.215 171.423 455C171.423 455.785 170.786 456.422 170 456.422C169.215 456.422 168.578 455.785 168.578 455C168.578 454.215 169.215 453.578 170 453.578Z" fill="#8b3fe6"></path>
+          <path d="M170 447C174.418 447 178 450.582 178 455C178 459.418 174.418 463 170 463C165.582 463 162 459.418 162 455C162 450.582 165.582 447 170 447ZM169.999 450.733C168.842 450.733 168.696 450.738 168.241 450.759C167.787 450.78 167.476 450.852 167.205 450.957C166.925 451.066 166.686 451.212 166.449 451.449C166.212 451.686 166.066 451.925 165.957 452.205C165.851 452.476 165.779 452.786 165.759 453.24C165.738 453.695 165.733 453.841 165.733 455C165.733 456.159 165.738 456.304 165.759 456.759C165.78 457.213 165.852 457.524 165.957 457.795C166.066 458.075 166.212 458.314 166.449 458.551C166.686 458.788 166.925 458.934 167.205 459.043C167.477 459.148 167.787 459.22 168.241 459.241C168.696 459.262 168.842 459.267 170 459.267C171.159 459.267 171.304 459.262 171.759 459.241C172.213 459.22 172.523 459.148 172.795 459.043C173.075 458.934 173.313 458.788 173.55 458.551C173.787 458.314 173.934 458.075 174.043 457.795C174.148 457.524 174.22 457.213 174.241 456.759C174.262 456.304 174.267 456.159 174.267 455C174.267 453.842 174.262 453.696 174.241 453.241C174.22 452.787 174.148 452.476 174.043 452.205C173.934 451.924 173.787 451.686 173.55 451.449C173.313 451.212 173.076 451.066 172.795 450.957C172.523 450.852 172.212 450.78 171.758 450.759C171.303 450.738 171.158 450.733 169.999 450.733Z" fill="#7B55E8"></path>
+          <path d="M169.618 451.502C169.731 451.502 169.858 451.502 170.001 451.502C171.14 451.502 171.275 451.506 171.724 451.527C172.14 451.546 172.366 451.616 172.516 451.674C172.715 451.751 172.858 451.843 173.008 451.992C173.157 452.142 173.248 452.285 173.326 452.484C173.384 452.634 173.454 452.86 173.473 453.276C173.494 453.725 173.498 453.861 173.498 454.999C173.498 456.138 173.494 456.273 173.473 456.723C173.454 457.139 173.384 457.365 173.326 457.515C173.249 457.714 173.157 457.856 173.008 458.005C172.858 458.154 172.716 458.246 172.516 458.323C172.366 458.382 172.14 458.452 171.724 458.471C171.275 458.491 171.14 458.496 170.001 458.496C168.861 458.496 168.726 458.491 168.276 458.471C167.86 458.452 167.635 458.382 167.484 458.323C167.285 458.246 167.143 458.154 166.994 458.005C166.845 457.856 166.752 457.713 166.675 457.514C166.616 457.364 166.546 457.138 166.527 456.722C166.507 456.272 166.503 456.137 166.503 454.998C166.503 453.859 166.507 453.724 166.527 453.275C166.546 452.859 166.616 452.633 166.675 452.483C166.752 452.283 166.845 452.141 166.994 451.991C167.143 451.842 167.285 451.75 167.484 451.672C167.634 451.613 167.86 451.545 168.276 451.526C168.67 451.508 168.823 451.502 169.618 451.501V451.502ZM170.001 452.809C168.791 452.809 167.809 453.79 167.809 455C167.809 456.21 168.791 457.191 170.001 457.191C171.211 457.19 172.191 456.21 172.191 455C172.191 453.79 171.211 452.809 170.001 452.809ZM172.278 452.21C171.995 452.21 171.766 452.44 171.766 452.723C171.767 453.005 171.996 453.235 172.278 453.235C172.561 453.235 172.79 453.005 172.79 452.723C172.79 452.44 172.561 452.21 172.278 452.21Z" fill="#7B55E8"></path>
+          <path d="M170 453.578C170.786 453.578 171.423 454.215 171.423 455C171.423 455.785 170.786 456.422 170 456.422C169.215 456.422 168.578 455.785 168.578 455C168.578 454.215 169.215 453.578 170 453.578Z" fill="#7B55E8"></path>
         </svg>
       </span>
-      <span style="font-size:13px;font-weight:600;color:#3a3542;">Instagram</span>
+      <span style="font-size:13px;font-weight:600;color:#2A1B4A;">Instagram</span>
     </a>
-    <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:20px;background:#f4f1f9;" style-hover="background:#eaddf7;">
+    <a href="#" style="display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:20px;background:#EDE6FD;" style-hover="background:#DCD2F7;">
       <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#ffffff;flex:none;">
         <svg width="16" height="16" viewBox="162 476 16 16">
-          <path d="M178 484C178 479.581 174.419 476 170 476C165.581 476 162 479.581 162 484C162 487.994 164.925 491.303 168.75 491.903V486.312H166.719V484H168.75V482.237C168.75 480.233 169.944 479.125 171.772 479.125C172.647 479.125 173.562 479.281 173.562 479.281V481.25H172.553C171.559 481.25 171.25 481.867 171.25 482.5V484H173.469L173.114 486.312H171.25V491.903C175.075 491.303 178 487.994 178 484Z" fill="#8b3fe6"></path>
+          <path d="M178 484C178 479.581 174.419 476 170 476C165.581 476 162 479.581 162 484C162 487.994 164.925 491.303 168.75 491.903V486.312H166.719V484H168.75V482.237C168.75 480.233 169.944 479.125 171.772 479.125C172.647 479.125 173.562 479.281 173.562 479.281V481.25H172.553C171.559 481.25 171.25 481.867 171.25 482.5V484H173.469L173.114 486.312H171.25V491.903C175.075 491.303 178 487.994 178 484Z" fill="#7B55E8"></path>
         </svg>
       </span>
-      <span style="font-size:13px;font-weight:600;color:#3a3542;">Facebook</span>
+      <span style="font-size:13px;font-weight:600;color:#2A1B4A;">Facebook</span>
     </a>
+  </div>
+</div>
+<div style="padding:0 24px 64px;max-width:1100px;margin:0 auto;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:#4A2C8A;margin-bottom:12px;">FUENTES</div>
+  <div style="font-size:12px;color:#6b6080;line-height:1.7;">
+    Guía de Nutrición Oncológica AAOC, capítulo 15 — Carolina Niño y Priscila Navarrete. Revisores: Agustín Falco, Federico Esteso y Zunino.<br>
+    Echepare M.L., Roldán M.B., Vilas S.Y., Villarreal E.N. — Valoración del estado nutricional en pacientes oncológicos adultos del HIGA Prof. Dr. Luis Güemes, Haedo. Actualización en Nutrición, Vol. 25 N°2, abril-junio 2024.<br>
+    Manzur &amp; Kohan-Cortada — Actualización en Nutrición, Vol. 25 N°4, 2024.<br>
+    ONCOvida N°27, SEOM — La nutrición en el paciente oncológico.
   </div>
 </div>
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
-  &quot;acabado&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;violeta&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;violeta&quot;, &quot;roble claro&quot;, &quot;nogal oscuro&quot;, &quot;negro mate&quot;], &quot;section&quot;: &quot;Material&quot;},
-  &quot;velocidadRecorrido&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1.4, &quot;tsType&quot;: &quot;number&quot;, &quot;min&quot;: 0.5, &quot;max&quot;: 4, &quot;step&quot;: 0.1, &quot;section&quot;: &quot;Recorrido&quot;}
-}">
+<script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -741,7 +642,7 @@ class Component extends DCLogic {
     this.suplementosRef = React.createRef();
     this.p2StatsRef = React.createRef();
     this.p2NoesRef = React.createRef();
-    this.p2QueRef = React.createRef();
+    this.p2QueRef = React.createRef(); this.encuestaRef = React.createRef();
     this.p2RingsRef = React.createRef();
     this.p2ResRef = React.createRef();
     this.p2MythRef = React.createRef(); this.liveRef = React.createRef();
@@ -798,17 +699,6 @@ class Component extends DCLogic {
     this._checkReveals();
     this._revealInterval = setInterval(this._checkReveals, 400);
 
-    const start = Date.now();
-    this._readyInterval = setInterval(() => {
-      const ready = this.mountRef.current && window.THREE && window.THREE.OrbitControls;
-      if (ready) {
-        clearInterval(this._readyInterval);
-        this.initScene();
-      } else if (Date.now() - start > 20000) {
-        clearInterval(this._readyInterval);
-        this.setState({ loading: false, loadError: true });
-      }
-    }, 80);
   }
 
   seqScenes() {
@@ -1421,7 +1311,7 @@ class Component extends DCLogic {
       stat1: fmt(84.4, 1), stat2: fmt(80.1, 1), stat3: fmt(23.5, 1),
       p2StatsRef: this.p2StatsRef, p2NoesRef: this.p2NoesRef, p2QueRef: this.p2QueRef, p2RingsRef: this.p2RingsRef,
       p2Noes: { op: s.revealP2Noes ? 1 : 0, ty: s.revealP2Noes ? 0 : 24 },
-      p2Que: { op: s.revealP2Que ? 1 : 0, ty: s.revealP2Que ? 0 : 24 },
+      p2Que: { op: 1, ty: 0 },
       ringAOff: s.revealP2Rings ? (502.7 * 0.02).toFixed(1) : 502.7,
       ringBOff: s.revealP2Rings ? (502.7 * 0.09).toFixed(1) : 502.7,
       ringCOff: s.revealP2Rings ? (502.7 * 0.38).toFixed(1) : 502.7,
@@ -1439,7 +1329,14 @@ class Component extends DCLogic {
       row5Ref: this.row5Ref,
       suplementosRef: this.suplementosRef,
       rowDonuts: { op: s.revealDonuts ? 1 : 0, ty: s.revealDonuts ? 0 : 24 },
-      row2: { op: s.revealRow2 ? 1 : 0, ty: s.revealRow2 ? 0 : 24 },
+      row2: { op: 1, ty: 0 },
+      symA: { o: s.revealRow2 ? 1 : 0, tl: s.revealRow2 ? 0 : -60, tr: s.revealRow2 ? 0 : 60, sc: s.revealRow2 ? 1 : 0.4, lw: s.revealRow2 ? 36 : 0 },
+      queA: { o: s.revealP2Que ? 1 : 0, tl: s.revealP2Que ? 0 : -60, tr: s.revealP2Que ? 0 : 60, sc: s.revealP2Que ? 1 : 0.5, rot: s.revealP2Que ? 0 : -20 },
+      encuestaRef: this.encuestaRef,
+      goEncuesta: (e) => { e.preventDefault(); const el = this.encuestaRef.current; if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' }); },
+      demoOpen: !!s.demoOpen,
+      demoBtn: s.demoOpen ? { bg: '#C9B8FA', ink: '#2A1B4A', rot: 180 } : { bg: 'transparent', ink: '#ffffff', rot: 0 },
+      toggleDemo: () => this.setState((st) => ({ demoOpen: !st.demoOpen })),
       row4: { op: s.revealRow4 ? 1 : 0, ty: s.revealRow4 ? 0 : 24 },
       row5: { op: s.revealRow5 ? 1 : 0, ty: s.revealRow5 ? 0 : 24 },
       lineDraw: { len: 372, offset: s.revealRow5 ? 0 : 372 },
@@ -1447,13 +1344,15 @@ class Component extends DCLogic {
       bajadaDots: this.makeDots(10, 8, s.revealPuzzle),
       donutLeft: this.donutStat(84.4, s.revealDonuts, 0),
       donutRight: this.donutStat(80.1, s.revealDonuts, 400),
-      ticksLeft: this.makeTicks(84.4, s.revealDonuts, 48),
-      ticksRight: this.makeTicks(80.1, s.revealDonuts, 48, '#ec8337'),
+      ticksLeft: this.makeTicks(84.4, s.revealDonuts, 48, '#7B55E8', '#D8CCF7'),
+      ticksRight: this.makeTicks(80.1, s.revealDonuts, 48, '#FF5C2B', '#D8CCF7'),
       donutState: s.donutState,
+      donutOffL: s.revealDonuts ? (502.7 * (1 - 0.844)).toFixed(1) : 502.7,
+      donutOffR: s.revealDonuts ? (502.7 * (1 - 0.801)).toFixed(1) : 502.7,
       onToggleDonutLeft: () => this.setState((st) => ({ donutState: { ...st.donutState, left: !st.donutState.left } })),
       onToggleDonutRight: () => this.setState((st) => ({ donutState: { ...st.donutState, right: !st.donutState.right } })),
-      donutLeftColor: s.donutState.left ? '#8b3fe6' : '#151318',
-      donutRightColor: s.donutState.right ? '#ec8337' : '#151318',
+      donutLeftColor: s.donutState.left ? '#7B55E8' : '#2A1B4A',
+      donutRightColor: s.donutState.right ? '#FF5C2B' : '#2A1B4A',
       picto20: this.makePicto(1, s.revealRow4, '#8b3fe6').slice(0, 5),
       loading: s.loading,
       puzzleReveal: { op: s.revealPuzzle ? 1 : 0, ty: s.revealPuzzle ? 0 : 24 },
